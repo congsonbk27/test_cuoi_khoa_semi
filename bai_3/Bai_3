@@ -1,0 +1,8 @@
+﻿Mô tả quá trình bootup linux:
+
+1. Trên ROM chứa ROM code. Sau khi khởi động ROM code chạy trước tiên nó làm nhiệm vụ khởi động thẻ nhớ hoặc eMMC, copy file SPL (MLO) lên internel RAM và run MLO.
+2.  MLO sẽ tìm và load bootloader u-boot.img ở cùng phân vùng bộ nhớ với nó lên Externel RAM. Ví dụ MLO trên thẻ nhớ thì load u-boot.img trên thẻ nhớ, MLO trên eMMC thì load u-boot.img trên eMMC. Sau đó khởi chay u-boot.img.
+MLO Reconfig PLL,  khởi động cổng Debug và  RAM ngoại.
+3. Uboot sẽ làm nhiệm vụ load device tree và kernel (uImage) lên externel RAM. Sau đó executable kernel.
+4. Kernel khởi chạy và  load rootfs lên externel RAM.
+
