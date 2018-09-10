@@ -1,0 +1,20 @@
+﻿Phân biệt Static Lib và Dynatic Lib:
+1. Static lib:
++ Copy tất cả module thư viện vào file executable. Nên khi build lại thư viện thi app không thay đổi. Không mất thời gian load thư viện khi chạy app.
++ Thường có tên là *.a.
++ Thường được build riêng cho từng app.
++ Làm tăng kích thước file executable.
++ Khi thay đổi thư viện thì phải build lại tất cả các app sử dụng nó.
++ Dùng lệnh ar để build ra file .a.
+
+
+
+2. Dynatic lib:
++ Chỉ khai báo tên thư viện trong file executable. 
++ Thường có tên là *.so.
++ Thường được share  cho nhiều app cùng sử dụng.
++ Ít làm thay đổi kích thước file executable.
++ Khi thay đổi thư viện thì không cần phải build lại app.
++ Tốn thời gian load thư viện khi chạy.
++ Dùng lệnh gcc -share để build ra file .so.
+
